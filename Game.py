@@ -2,7 +2,7 @@ import random
 
 class Game:
 
-    def __init__(self, low, high) -> None:
+    def __init__(self, low, high):
         self.total_lives = 0
         self.low = low
         self.high = high

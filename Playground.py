@@ -3,7 +3,7 @@ from Game import Game
 
 class Playground:
 
-    def __init__(self, low, high) -> None:
+    def __init__(self, low, high):
         self.intro = Intro()
 
         # Print greeting
