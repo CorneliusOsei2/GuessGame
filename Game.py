@@ -21,7 +21,7 @@ class Game:
                     #if player entered lives greater than the given fixed lives, then the difficulty of the
                     #game increases by incrementing the 'self.high' by 2.
                     if temp > self.total_lives:
-                        for _ in range(3, temp):
+                        for _ in range(self.total_lives, temp):
                             self.high += 2
                             
                     self.total_lives = temp
@@ -76,7 +76,10 @@ class Game:
 
         print("Better luck next time, Loser 👻")
         again = input("Will you like to play again? y / n ")
-
+        
+        self.high = 10 #sets 'stop' value to defaults
+        self.total_lives = 3 #sets total lives to fixed or default
+        
         if again.lower() in {"y", "yes"}:
             self.start_game()
         
