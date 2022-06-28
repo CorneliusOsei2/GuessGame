@@ -2,8 +2,8 @@ import random
 
 class Game:
 
-    def __init__(self, low, high):
-        self.total_lives = 0
+    def __init__(self, low, high=10):
+        self.total_lives = 3 #assigns 3 as fixed lives of player. 
         self.low = low
         self.high = high
         self.target_num = random.randint(low, high)
@@ -17,6 +17,13 @@ class Game:
                 temp = int(input("How many lives do you want on this journey: "))
 
                 if type(temp) == int and temp > 0:
+
+                    #if player entered lives greater than the given fixed lives, then the difficulty of the
+                    #game increases by incrementing the 'self.high' by 2.
+                    if temp > self.total_lives:
+                        for _ in range(3, temp):
+                            self.high += 2
+                            
                     self.total_lives = temp
                     print(temp, " you shall have! 😉")
                     break
